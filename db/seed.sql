@@ -11,6 +11,6 @@ review_id SERIAL PRIMARY KEY,
 title VARCHAR(250)
 rating INTEGER,
 review_text TEXT,
-user_name VARCHAR REFRENCES user_yadio(user_name)
+user_name VARCHAR REFERENCES user_yadio(user_name)
 );
 
