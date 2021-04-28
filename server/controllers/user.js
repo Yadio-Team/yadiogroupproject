@@ -6,13 +6,13 @@ module.exports = {
     let { userName, password } = req.body;
 
     try {
-      const [foundUser] = await db.user.get_user(userName);
+      const [foundUser] = await db.users.get_user(userName);
       if (foundUser) {
         res.status(401).send("Sorry account already exists");
       } else {
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(password, salt);
-        const [newUser] = await db.user.register_user([userName, hash]);
+        const [newUser] = await db.users.register_user([userName, hash]);
         delete newUser.password;
 
         req.session.user = newUser;
@@ -28,7 +28,7 @@ module.exports = {
     const { userName, password } = req.body;
     console.log(req.body);
     try {
-      const [foundUser] = await db.user.get_user(userName);
+      const [foundUser] = await db.users.get_user(userName);
       if (foundUser) {
         const comparePassword = foundUser.password;
         const authenticated = bcrypt.compareSync(password, comparePassword);
