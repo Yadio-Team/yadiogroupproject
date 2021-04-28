@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router'
 import { getUser } from '../redux/userReducer'
-import Register from './Register'
+
 import axios from 'axios';
+import Header from './Header'
 
 
 
@@ -28,6 +29,18 @@ const Auth = ({ getUser }) => {
           console.log(err)
         }
       }
+      const registerUser = async (e) => {
+        e.preventDefault()
+        const { userName, password } = state
+    
+        try {
+          const user = await axios.post('/auth/register', { userName, password })
+          getUser(user.data)
+          history.push('/')
+        } catch (err) {
+          console.log(err)
+        }
+      }
 
       const changeHandler = e => setState({
           ...state,
@@ -36,7 +49,7 @@ const Auth = ({ getUser }) => {
       return (
         <div className='auth'>
           <h1 className='auth-title'>Sign In</h1>
-          <form className='auth-info' onSubmit={(e => loginUser(e))}>
+          <div className='auth-info' >
             <input
               className='auth-userName'
               placeholder='User Name'
@@ -49,9 +62,10 @@ const Auth = ({ getUser }) => {
               name='password'
               onChange={(e) => changeHandler(e)}
             />
-           <button className='sign-in-button' type='submit'>Sign in</button>
-           <button className='register-button' type='submit'>Register</button>
-          </form>
+            <Header/>
+           <button className='sign-in-button' type='submit' onClick={loginUser}>Sign in</button>
+           <button className='register-button' type='submit'onClick={registerUser}>Register</button>
+          </div>
         </div>
       ) 
 
