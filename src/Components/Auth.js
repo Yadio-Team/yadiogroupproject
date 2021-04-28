@@ -31,8 +31,29 @@ const Auth = ({ getUser }) => {
 
       const changeHandler = e => setState({
           ...state,
-          [e.target.userName] : e.target.value
-      }) 
+          [e.target.name] : e.target.value
+      })
+      return (
+        <div className='auth'>
+          <h1 className='auth-title'>Sign In</h1>
+          <form className='auth-info' onSubmit={(e => loginUser(e))}>
+            <input
+              className='auth-userName'
+              placeholder='User Name'
+              name='userName'
+              onChange={(e) => changeHandler(e)}
+            />
+            <input
+              className='auth-password'
+              placeholder='Password'
+              name='password'
+              onChange={(e) => changeHandler(e)}
+            />
+           <button className='sign-in-button' type='submit'>Sign in</button>
+           <button className='register-button' type='submit'>Register</button>
+          </form>
+        </div>
+      ) 
 
 }
 
