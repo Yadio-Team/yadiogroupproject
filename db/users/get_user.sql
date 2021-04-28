@@ -1,2 +1,3 @@
 SELECT * FROM user_yadio
-WHERE user_name = $1;
+WHERE user_name = $1
+RETURNING * ;
