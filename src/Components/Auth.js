@@ -11,6 +11,7 @@ const Auth = ({ getUser }) => {
     password: ''
   })
 
+
   const history = useHistory()
 
 
@@ -38,6 +39,7 @@ const Auth = ({ getUser }) => {
       console.log(err)
     }
   }
+
 
   const changeHandler = e => setState({
     ...state,
