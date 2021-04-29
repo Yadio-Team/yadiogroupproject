@@ -5,9 +5,9 @@ import {HashRouter as Switch, Route} from 'react-router-dom'
 
 export default(
     <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/auth" component={Auth}/>
-
+        <Route exact path="/" component={Auth}/>
+        <Route path="/home" component={Home}/>
+        
     </Switch>
 
 )
