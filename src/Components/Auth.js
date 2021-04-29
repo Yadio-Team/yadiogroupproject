@@ -6,7 +6,6 @@ import axios from 'axios';
 
 
 
-
 const Auth = ({ getUser }) => {
     const [state, setState] = useState({
       userName: '',
@@ -48,7 +47,7 @@ const Auth = ({ getUser }) => {
       return (
         <div className='auth'>
           <h1 className='auth-title'>Sign In</h1>
-          <div className='auth-info' >
+          <div className='auth-info' onSubmit={(e => loginUser(e))}>
             <input
               className='auth-userName'
               placeholder='User Name'
