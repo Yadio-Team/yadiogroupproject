@@ -4,6 +4,7 @@ const massive = require("massive");
 const session = require("express-session");
 const { checkUser } = require("./controllers/middleware");
 const userCtrl = require("./controllers/user");
+const reviewCtrl = require("./controllers/reviews");
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
@@ -36,8 +37,13 @@ massive({
   })
   .catch((err) => console.log(err));
 
-  //ENDPOINTS - USER
+//ENDPOINTS - USER
 app.post("/auth/register", userCtrl.registerUser);
 app.post("/auth/login", userCtrl.loginUser);
 app.post("/auth/logout", userCtrl.logoutUser);
 app.get("/auth/me", checkUser, userCtrl.getUser);
+
+// ENDPOINTS - REVIEW
+app.post("/review/create", reviewCtrl.createReview);
+app.get("/review/title", reviewCtrl.getReview);
+app.get("/review/user", reviewCtrl.getReviewbyUser);
