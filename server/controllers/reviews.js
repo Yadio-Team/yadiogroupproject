@@ -1,0 +1,35 @@
+module.exports = {
+    getReview: async (req, res) => {
+        const db = req.app.get('db')
+        const { id } = req.params
+        const review = await db.reviews.get_title_review(+id)
+        if (review) {
+            res.status(200).send(review)
+        } else {
+            res.status(400).send('No reviews found')
+        }
+    },
+    createReview: async (req, res) => {
+        const db = req.app.get('db')
+        const { id } = req.params
+        let { title, rating, reviewText, userName } = req.body
+        let date = new Date
+        const newReview = await db.reviews.create_review(+id)
+        if (newReview) {
+            res.status(200).send(newReview)
+        } else {
+            res.status(400).send('Review could not be created')
+        }
+    },
+    getReviewbyUser: async (req, res) => {
+        const db = req.app.get('db')
+        const { user_name } = req.params
+        try {
+            const userReview = await db.reviews.get_all_reviews([user_name])
+            res.status(200).send(userReview)
+        } catch (error) {
+            console.log('Unable to find review', error);
+            res.status(400).send('No reviews by user')
+        }
+    }
+}
