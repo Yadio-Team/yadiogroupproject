@@ -3,12 +3,21 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router";
 import { getUser } from "../redux/userReducer";
 import axios from "axios";
+import React from "react";
+import IconButton from "@material-ui/core/IconButton";
+import Visibility from "@material-ui/icons/Visibility";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import Input from "@material-ui/core/Input";
 
 const Auth = ({ getUser }) => {
   const [user, setUser] = useState({
     userName: localStorage.getItem("userName") || "",
     password: "",
     rememberMe: localStorage.getItem("rememberMe") || false,
+  });
+  const [values, setValues] = useState({
+    showPassword: false,
   });
 
   const history = useHistory();
@@ -57,6 +66,18 @@ const Auth = ({ getUser }) => {
     localStorage.setItem("userName", rememberMe ? userName : "");
   };
 
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword });
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
+  const handlePasswordChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
+
   return (
     <div className="auth">
       <h1 className="auth-title">Sign In</h1>
@@ -68,12 +89,29 @@ const Auth = ({ getUser }) => {
           value={userName}
           onChange={handleChange}
         />
-        <input
+        {/* <input
           className="auth-password"
           placeholder="Password"
           name="password"
           value={password}
           onChange={handleChange}
+        /> */}
+        <Input
+          className="auth-password"
+          placeholder="Password"
+          type={values.showPassword ? "text" : "password"}
+          onChange={handlePasswordChange("password")}
+          value={password}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {values.showPassword ? <Visibility /> : <VisibilityOff />}
+              </IconButton>
+            </InputAdornment>
+          }
         />
         <input
           className="remember-me"
