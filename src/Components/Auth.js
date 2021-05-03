@@ -89,19 +89,13 @@ const Auth = ({ getUser }) => {
           value={userName}
           onChange={handleChange}
         />
-        {/* <input
+        <Input
           className="auth-password"
           placeholder="Password"
           name="password"
           value={password}
           onChange={handleChange}
-        /> */}
-        <Input
-          className="auth-password"
-          placeholder="Password"
           type={values.showPassword ? "text" : "password"}
-          onChange={handlePasswordChange("password")}
-          value={password}
           endAdornment={
             <InputAdornment position="end">
               <IconButton
@@ -113,6 +107,7 @@ const Auth = ({ getUser }) => {
             </InputAdornment>
           }
         />
+        
         <input
           className="remember-me"
           name="rememberMe"
