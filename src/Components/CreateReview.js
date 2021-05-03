@@ -1,17 +1,24 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Header from './Header'
+import ReactStars from "react-rating-stars-component";
+import Header from "./Header";
 
 export default class CreateReview extends Component {
   constructor() {
     super();
     this.state = {
       title: "",
-      rating: "",
+      rating: 0,
       reviewText: "",
       userName: "",
     };
   }
+
+  ratingChanged = (newRating) => {
+    this.setState({ rating: newRating });
+    console.log(newRating);
+  };
+
   handleInput = (e) => {
     const { value, name } = e.target;
     this.setState({ [name]: value });
@@ -24,7 +31,7 @@ export default class CreateReview extends Component {
       .then((res) => {
         this.setState({
           title: "",
-          rating: "",
+          rating: 0,
           reviewText: "",
           userName: "",
         });
@@ -41,7 +48,7 @@ export default class CreateReview extends Component {
 
     return (
       <div className="create-form">
-        <Header/>
+        <Header />
         <h1>Create A Review</h1>
         <input
           placeholder="title"
@@ -50,12 +57,16 @@ export default class CreateReview extends Component {
           value={title}
           onChange={this.handleInput}
         />
-        <input
-          placeholder="rating"
+        {/* <input */}
+        <ReactStars
+          count={5}
+          onChange={this.ratingChanged}
+          size={26}
+          activeColor="#ffd700"
           type="number"
           name="rating"
           value={rating}
-          onChange={this.handleInput}
+          // onChange={this.handleInput}
         />
         <input
           placeholder="Your Review"
