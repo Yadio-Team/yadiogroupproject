@@ -5,6 +5,7 @@ const session = require("express-session");
 const { checkUser } = require("./controllers/middleware");
 const userCtrl = require("./controllers/user");
 const reviewCtrl = require("./controllers/reviews");
+const podcastCtrl=require("./controllers/podcast")
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
@@ -47,3 +48,9 @@ app.get("/auth/me", checkUser, userCtrl.getUser);
 app.post("/review/create", reviewCtrl.createReview);
 app.get("/review/title", reviewCtrl.getReview);
 app.get("/review/user", reviewCtrl.getReviewbyUser);
+
+//ENDPOINTS - LISTEN
+// app.post("https://api.podbean.com/v1/oauth/token")
+app.get("https://listen-api.listennotes.com/api/v2/best_podcasts",podcastCtrl.getBestPodcasts)
+// app.get("https://listen-api.listennotes.com/api/v2/genres")
+// app.get("https://listen-api.listennotes.com/api/v2/search")

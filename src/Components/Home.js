@@ -2,6 +2,7 @@ import React from "react";
 import Header from './Header';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import  Podcast from './Podcast'
 
 const Home = () => {
 
@@ -14,7 +15,7 @@ const Home = () => {
         Most Reviewed Podcastsssssss
           </div>
       <div className="Cover-Art">
-        Display Cover Art Here
+        <Podcast/>
             </div>
       <div className="Row">
         Podcast 15 min or less
