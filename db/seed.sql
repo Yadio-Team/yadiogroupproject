@@ -9,7 +9,7 @@ password VARCHAR(100)
 CREATE TABLE reviews (
 review_id SERIAL PRIMARY KEY,
 title VARCHAR(250)
-rating INTEGER,
+rating SMALLINT,
 review_text TEXT,
 date_created TIMESTAMP,
 user_name VARCHAR REFERENCES user_yadio(user_name)
