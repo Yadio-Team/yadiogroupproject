@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { useHistory } from 'react-router'
 import { getUser } from '../redux/userReducer'
 import axios from 'axios';
+import Podcasts from './Podcasts'
 
 
 const Auth = ({ getUser }) => {
@@ -47,6 +48,7 @@ const Auth = ({ getUser }) => {
   })
   return (
     <div className='auth'>
+      {/* <Podcasts/> */}
       <h1 className='auth-title'>Sign In</h1>
       <div className='auth-info' >
         <input
