@@ -17,12 +17,10 @@ const Home = () => {
       <div className="Cover-Art">
         <Podcast/>
             </div>
-      <div className="Row">
-        Podcast 15 min or less
-          </div>
-      <div className="Cover-Art">
-        Display Cover Art Here
-            </div>
+      {/* <div className="Row">
+        
+          </div> */}
+      
     </div>
   )
 }

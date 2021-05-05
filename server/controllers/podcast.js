@@ -8,7 +8,7 @@ module.exports={
     getBestPodcasts: async(req,res)=>{
     
         // let id=1;
-    client.fetchBestPodcasts({  genre_id: '91',
+    client.fetchBestPodcasts({  genre_id: '',
     page: 2,
     region: 'us',
     safe_mode: 0,})
