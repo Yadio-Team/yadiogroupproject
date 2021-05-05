@@ -51,6 +51,6 @@ app.get("/review/user", reviewCtrl.getReviewbyUser);
 
 //ENDPOINTS - LISTEN
 // app.post("https://api.podbean.com/v1/oauth/token")
-app.get("https://listen-api.listennotes.com/api/v2/best_podcasts",podcastCtrl.getBestPodcasts)
+app.get("https://listen-api.listennotes.com/api/v2/curated-podcasts",podcastCtrl.getCuratedPodcasts)
 // app.get("https://listen-api.listennotes.com/api/v2/genres")
 // app.get("https://listen-api.listennotes.com/api/v2/search")

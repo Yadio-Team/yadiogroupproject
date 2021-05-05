@@ -5,13 +5,12 @@ const client = Client({apiKey: null})
 
 module.exports={
     
-    getBestPodcasts: async(req,res)=>{
+    getCuratedPodcasts: async(req,res)=>{
     
         // let id=1;
-    client.fetchBestPodcasts({  genre_id: '',
-    page: 2,
-    region: 'us',
-    safe_mode: 0,})
+    client.fetchCuratedPodcastsLists({
+    page: 1
+    })
 .then((res) => {
     // Get response json data here
     console.log(res.data);
