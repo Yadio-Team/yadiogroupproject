@@ -7,7 +7,7 @@ const userCtrl = require("./controllers/user");
 const reviewCtrl = require("./controllers/reviews");
 const podcastCtrl=require("./controllers/podcast")
 
-const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, SPOTIFY_CLIENT_ID, CLIENT_SECRET } = process.env;
 
 const app = express();
 
