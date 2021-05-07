@@ -9,6 +9,7 @@ import Visibility from "@material-ui/icons/Visibility";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Input from "@material-ui/core/Input";
+import logo from '../assets/logo.png'
 
 const Auth = ({ getUser }) => {
   const [user, setUser] = useState({
@@ -80,6 +81,7 @@ const Auth = ({ getUser }) => {
 
   return (
     <div className="auth">
+      <img className='logo' src={logo} alt-text='logo'/>
       <h1 className="auth-title">Sign In</h1>
       <div className="auth-info">
         <input

@@ -1,13 +1,39 @@
+.video-container {
+  width: 100vw;
+  height: auto;
+  position: fixed;
+  z-index: 1;
+}
 
+video {
+  width: 100vw;
+  height: auto;
+}
 
-.vid {
-    object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin-top: 200px;
-  }
+.search {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+  padding: 20px;
+  z-index: 2;
+  text-align: center;
+  position: fixed;
+  left: 600px;
+  top: 400px;
+  width: 500px;
+  height: 100px;
+  border: solid rgba(0, 0, 0, 0.37) 3px;
+  border-radius: 1rem;
+  background-color: $yellow;
+}
+.query {
+  width: 400px;
+  border-radius: 5px;
+}
 
-  
+// .search-bar{
+//   z-index:2;
+//   position: fixed;
+//   margin-top: 500px;
+//   margin-left: 720px;
+//   margin-right: 100px;
+// }

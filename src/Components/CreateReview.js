@@ -46,12 +46,12 @@ export default class CreateReview extends Component {
   render() {
     const { title, rating, reviewText, userName } = this.state;
 
-    return (
+    return (<div><Header />
       <div className="create-form">
-        <Header />
+        
         <h1>Create A Review</h1>
         <input
-          placeholder="title"
+          placeholder="Podcast Title"
           type="text"
           name="title"
           value={title}
@@ -69,13 +69,14 @@ export default class CreateReview extends Component {
           // onChange={this.handleInput}
         />
         <input
+          className='your-review'
           placeholder="Your Review"
           type="text"
           name="reviewText"
           value={reviewText}
           onChange={this.handleInput}
         />
-        <input
+        {/* <input
           className="podcast-review"
           name="podcast"
           onChange={this.handleChange}
@@ -88,11 +89,11 @@ export default class CreateReview extends Component {
           onChange={this.handleChange}
           type="checkbox"
         />{" "}
-        Audiobook
+        Audiobook */}
         <button className="submit-review" onClick={this.handleSend}>
           Submit
         </button>
-      </div>
+      </div></div>
     );
   }
 }
