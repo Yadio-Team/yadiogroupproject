@@ -1,4 +1,44 @@
-.auth{color: black; 
-        background-color: brown; 
-        height: 80vh; 
-        width: 80vw;}
+.auth{color: white; 
+        position: fixed;
+        top:30%;
+        left:25%;
+        background-color:rgba(216, 216, 65, 0.493);
+        height: 50vh; 
+        width: 50vw;
+        border-radius: 1px;
+}
+
+.auth-title{
+        text-align: center;
+}        
+
+.auth-userName{
+        height:26px;
+        border-radius: 5px;
+}
+
+.auth-password{
+        margin-left:5px;
+        height:24px;
+        border-radius: 25px;
+        
+}
+
+.auth-info{
+        display: flex;
+        height:30px;
+        align-items: center;
+        justify-content: center;
+        vertical-align: center;
+}
+
+.sign-in-button{
+        margin-left: 10px;
+}
+
+.logo{
+       position: relative;
+        left:200px;
+        height:200px;
+        width:450px;
+}
