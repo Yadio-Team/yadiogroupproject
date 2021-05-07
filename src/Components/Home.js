@@ -2,7 +2,8 @@ import React from "react";
 import Header from './Header';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import  Podcast from './Podcast'
+import Podcast from './Podcast'
+import SearchBar from "./SearchBar"
 
 const Home = () => {
 
@@ -11,16 +12,14 @@ const Home = () => {
       <div className="Header-Container" >
         <Header />
       </div>
-      <div className="Row">
-        Most Reviewed Podcastsssssss
-          </div>
+       
       <div className="Cover-Art">
-        <Podcast/>
-            </div>
+        <Podcast />
+      </div>
       {/* <div className="Row">
         
           </div> */}
-      
+
     </div>
   )
 }

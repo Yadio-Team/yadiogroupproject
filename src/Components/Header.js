@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { logoutUser } from "../redux/userReducer";
 import { Link } from "react-router-dom";
+import SearchBar from './SearchBar';
 
 
 const Header = ({ logoutUser, user }) => {
@@ -31,9 +32,6 @@ const Header = ({ logoutUser, user }) => {
         Logout
       </Link>
 
-      <Link to="/search-results" className="search">
-        Search bar/icon
-      </Link>
     </div>
   );
 };
