@@ -1,2 +1,2 @@
 SELECT * FROM reviews
-WHERE title = $1
+WHERE name = $1

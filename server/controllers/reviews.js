@@ -2,7 +2,7 @@ module.exports = {
   getReview: async (req, res) => {
     const db = req.app.get("db");
     const { name } = req.body;
-    const review = await db.reviews.get_name_review(title);
+    const review = await db.reviews.get_name_review(name);
     if (review) {
       res.status(200).send(review);
     } else {
@@ -12,11 +12,11 @@ module.exports = {
   createReview: async (req, res) => {
     const db = req.app.get("db");
 
-    let { title, rating, reviewText } = req.body;
+    let { name, rating, reviewText } = req.body;ß
     let { user_name } = req.session.user;
     let date = new Date();
     const newReview = await db.reviews.create_review(
-      title,
+      name,
       rating,
       reviewText,
       user_name,

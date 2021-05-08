@@ -1,9 +1,7 @@
 import React from "react";
 import Header from './Header';
-import axios from 'axios';
-import { connect } from 'react-redux';
 import Podcast from './Podcast'
-import SearchBar from "./SearchBar"
+
 
 const Home = () => {
 
