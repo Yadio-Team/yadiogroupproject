@@ -75,13 +75,13 @@ const Auth = ({ getUser }) => {
     event.preventDefault();
   };
 
-  const handlePasswordChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
+  // const handlePasswordChange = (prop) => (event) => {
+  //   setValues({ ...values, [prop]: event.target.value });
+  // };
 
   return (
     <div className="auth">
-      <img className='logo' src={logo} alt-text='logo'/>
+      <img className='logo' src={logo} alt='logo'/>
       <h1 className="auth-title">Sign In</h1>
       <div className="auth-info">
         <input

@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-const { Client, fetchCuratedPodcastsLists } = require("podcast-api");
+
+const { Client } = require("podcast-api");
 const client = Client({ apiKey: "9585898bf17b4b92a143199939a720f8" });
 
 const Podcast = () => {
-  const [show, setShow] = useState([]);
-  const [bestPodcasts, setBestPodcasts] = useState([]);
-  const [genre, setGenre] = useState("");
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -38,11 +35,10 @@ const Podcast = () => {
   const mappedPodcasts = data.map((e) => {
     return (
       <div>
-        <h2 >{e.title}</h2>
-        {e.podcasts.map(pod=>{
-            return <img src={pod.image}/>
-        }
-            )}
+        <h2>{e.title}</h2>
+        {e.podcasts.map((pod) => {
+          return <img src={pod.image} alt="coverart" />;
+        })}
       </div>
     );
   });

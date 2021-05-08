@@ -1,14 +1,13 @@
 import { connect } from "react-redux";
 import { logoutUser } from "../redux/userReducer";
 import { Link } from "react-router-dom";
-import SearchBar from './SearchBar';
-import logo from "../assets/logo-icon.png"
+import logo from "../assets/logo-icon.png";
 
 const Header = ({ logoutUser, user }) => {
   return (
     <div className="header-component">
       <Link to="/home" className="company-logo">
-        <img src={logo} alt-text='logo'/>
+        <img src={logo} alt="logo" />
       </Link>
       <Link to="/about" className="about-icon">
         About Us
@@ -19,8 +18,8 @@ const Header = ({ logoutUser, user }) => {
       <Link to="/audio-books" className="audiobook-icon">
         Audiobooks
       </Link>
-      <Link to="/create" className="review-icon">
-        Create Review
+      <Link to="/reviews" className="review-icon">
+        Podcast Reviews
       </Link>
       <Link
         to="/"
@@ -31,7 +30,6 @@ const Header = ({ logoutUser, user }) => {
       >
         Logout
       </Link>
-
     </div>
   );
 };
