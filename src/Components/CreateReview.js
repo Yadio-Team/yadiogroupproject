@@ -7,7 +7,7 @@ export default class CreateReview extends Component {
   constructor() {
     super();
     this.state = {
-      title: "",
+      name: "",
       rating: 0,
       reviewText: "",
       userName: "",
@@ -25,12 +25,12 @@ export default class CreateReview extends Component {
   };
 
   handleSend = () => {
-    const { title, rating, reviewText, userName } = this.state;
+    const { name, rating, reviewText, userName } = this.state;
     axios
-      .post("/review/create", { title, rating, reviewText, userName })
+      .post("/review/create", { name, rating, reviewText, userName })
       .then((res) => {
         this.setState({
-          title: "",
+          name: "",
           rating: 0,
           reviewText: "",
           userName: "",
@@ -48,7 +48,7 @@ export default class CreateReview extends Component {
 
     return (<div><Header />
       <div className="create-form">
-        
+
         <h1>Create A Review</h1>
         <input
           placeholder="Podcast Title"
@@ -66,7 +66,7 @@ export default class CreateReview extends Component {
           type="number"
           name="rating"
           value={rating}
-          // onChange={this.handleInput}
+        // onChange={this.handleInput}
         />
         <input
           className='your-review'

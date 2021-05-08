@@ -1,8 +1,8 @@
 module.exports = {
   getReview: async (req, res) => {
     const db = req.app.get("db");
-    const { title } = req.body;
-    const review = await db.reviews.get_title_review(title);
+    const { name } = req.body;
+    const review = await db.reviews.get_name_review(title);
     if (review) {
       res.status(200).send(review);
     } else {

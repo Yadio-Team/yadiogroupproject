@@ -12,6 +12,7 @@ const SearchBar = () => {
   const [shows, setShows] = useState([]);
   const [token, setToken] = useState("");
   const [data, setData] = useState([]);
+  const [active, setActive] = useState(false);
   const queryValue = "";
   const history = useHistory();
 
@@ -24,8 +25,8 @@ const SearchBar = () => {
           "Basic " +
           new Buffer(
             "34e6e6f8d0c44a05969f59e1f9923d96" +
-              ":" +
-              "6ea7643063d54381be57faa6160712bd"
+            ":" +
+            "6ea7643063d54381be57faa6160712bd"
           ).toString("base64"),
       },
       data: "grant_type=client_credentials",
@@ -55,15 +56,16 @@ const SearchBar = () => {
       .catch((error) => console.log(error));
   };
 
-  const addToCollection = async (show) => {
-    axios.post("/audio-books", show).then(alert("show added"));
-  };
+  const toggleClass = () => {
+    const currentState = active;
+    setActive(!currentState)
+  }
 
   const showsMapped = shows.map((show) => {
     return (
       <div className="show-preview">
-        <img src={show.images[1].url} />
-        <button onClick={() => addToCollection(show)}>Add to Collection</button>
+        <img className='img-results' src={show.images[1].url} />
+        {/* <button onClick={() => getReview(show)}>reviews</button> */}
       </div>
     );
   });
@@ -73,28 +75,32 @@ const SearchBar = () => {
       {/* <div className='video'> */}
 
       {/* </div> */}
-      <form className="search">
-        FIND YOUR NEXT FAVORITE PODCAST  
+      <form className={active ? "search-top" : "search"}>
+        FIND YOUR NEXT FAVORITE PODCAST
         <br></br>
         <input
-        className='query'
+          className='query'
           type="text"
           placeholder="SEARCH PODCASTS"
           onChange={(e) => setTitle(e.target.value)}
         ></input>
-        <button className="search-bar" type="button" onClick={search}>
+        <button className="search-bar" type="button" onClick={() => {
+          search();
+          toggleClass();
+        }}>
           SEARCH
         </button>
       </form>
 
-      <div class="video-container">
+      <div className={active ? "hide-video" : "video-container"}>
         <video autoPlay muted loop>
           <source src={waves} type="video/mp4" />
         </video>
       </div>
 
-      <div>{showsMapped}</div>
-    </div>
+      <div className={active ? "map-shows" : "no-shows"}
+      >{showsMapped}</div>
+    </div >
   );
 };
 
