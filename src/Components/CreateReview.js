@@ -44,7 +44,7 @@ export default class CreateReview extends Component {
   };
 
   render() {
-    const { title, rating, reviewText, userName } = this.state;
+    const { name, rating, reviewText, userName } = this.state;
 
     return (
       <div>
@@ -54,8 +54,8 @@ export default class CreateReview extends Component {
           <input
             placeholder="Podcast Title"
             type="text"
-            name="title"
-            value={title}
+            name="name"
+            value={name}
             onChange={this.handleInput}
           />
 
