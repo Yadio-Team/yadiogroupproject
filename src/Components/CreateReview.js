@@ -48,7 +48,6 @@ export default class CreateReview extends Component {
 
     return (
       <div>
-        <Header />
         <div className="create-form">
           <h1>Create A Review</h1>
           <input
