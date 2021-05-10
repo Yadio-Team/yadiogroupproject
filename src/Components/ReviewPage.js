@@ -12,6 +12,17 @@ const ReviewPage = () => {
   const [reviews, setReviews] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [reviewInput, setReviewInput] = useState("");
+  function openModal() {
+    setIsOpen(true);
+  }
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    
+  }
+
+  function closeModal(){
+    setIsOpen(false);
+  }
 
   const reviewSearch = () => {
     axios
@@ -35,7 +46,13 @@ const ReviewPage = () => {
         <p>{review.review_text}</p>
         <p>{review.user_name}</p>
         <p>{review.date_created}</p>
-        <CreateReview />
+        <button onClick={openModal}>Create Review</button>
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+        >{<CreateReview/>}</Modal>
+        
       </div>
     );
   });
