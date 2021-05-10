@@ -17,10 +17,11 @@ const ReviewPage = () => {
   }
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    
+
   }
 
-  function closeModal(){
+
+  function closeModal() {
     setIsOpen(false);
   }
 
@@ -51,8 +52,10 @@ const ReviewPage = () => {
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
-        >{<CreateReview/>}</Modal>
-        
+        >{<CreateReview />}
+          <button onClick={closeModal}>X</button>
+        </Modal>
+
       </div>
     );
   });
