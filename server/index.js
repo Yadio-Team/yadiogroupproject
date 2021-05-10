@@ -46,7 +46,7 @@ app.get("/auth/me", checkUser, userCtrl.getUser);
 
 // ENDPOINTS - REVIEW
 app.post("/review/create", reviewCtrl.createReview);
-app.get("/review/name", reviewCtrl.getReview);
+app.post("/review/name", reviewCtrl.getReview);
 app.get("/review/user", reviewCtrl.getReviewbyUser);
 
 //ENDPOINTS - LISTEN
