@@ -11,8 +11,13 @@ export default class CreateReview extends Component {
       rating: 0,
       reviewText: "",
       userName: "",
+      isOpen: true,
     };
+    // this.toggleOpen = this.toggleOpen.bind(this)
   }
+  // toggleOpen = () => {
+  //   this.setState(prevState => ({ isOpen: !prevState.isOpen }));
+  // }
 
   ratingChanged = (newRating) => {
     this.setState({ rating: newRating });
@@ -80,7 +85,7 @@ export default class CreateReview extends Component {
             Submit
           </button>
         </div>
-      </div>
+      </div >
     );
   }
 }

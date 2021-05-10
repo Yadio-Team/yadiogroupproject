@@ -31,7 +31,7 @@ const Auth = ({ getUser }) => {
       const user = await axios.post("/auth/login", { userName, password });
       getUser(user.data);
       handleFormSubmit();
-      history.push("/home");
+      history.push("/reviews");
     } catch (err) {
       console.log(err);
     }
@@ -43,7 +43,7 @@ const Auth = ({ getUser }) => {
       const user = await axios.post("/auth/register", { userName, password });
       getUser(user.data);
       handleFormSubmit();
-      history.push("/home");
+      history.push("/reviews");
     } catch (err) {
       console.log(err);
     }
@@ -81,7 +81,7 @@ const Auth = ({ getUser }) => {
 
   return (
     <div className="auth">
-      <img className='logo' src={logo} alt='logo'/>
+      <img className='logo' src={logo} alt='logo' />
       <h1 className="auth-title">Sign In</h1>
       <div className="auth-info">
         <input
@@ -109,7 +109,7 @@ const Auth = ({ getUser }) => {
             </InputAdornment>
           }
         />
-        
+
         <input
           className="remember-me"
           name="rememberMe"
