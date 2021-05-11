@@ -49,6 +49,11 @@ const ReviewPage = () => {
       });
   };
 
+  function reviewReset() {
+    closeModal();
+    reviewSearch();
+   }
+
   const handleSend = () => {
     // const { name, rating, reviewText, userName } = this.state;
     axios
@@ -74,7 +79,7 @@ const ReviewPage = () => {
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
         >{<CreateReview handleSend={handleSend} />}
-          <button onClick={closeModal}>X</button>
+          <button onClick={reviewReset}>X</button>
         </Modal>
 
       </div>
