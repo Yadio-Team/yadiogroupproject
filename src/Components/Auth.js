@@ -86,7 +86,7 @@ const Auth = ({ getUser }) => {
       <div className="auth-info">
         <input
           className="auth-userName"
-          placeholder="User Name"
+          placeholder="UserName"
           name="userName"
           value={userName}
           onChange={handleChange}
