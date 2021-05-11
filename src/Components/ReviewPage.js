@@ -12,6 +12,18 @@ const ReviewPage = () => {
   const [reviews, setReviews] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [reviewInput, setReviewInput] = useState("");
+  // const [name, setName] = useState('');
+  // const [rating, setRating] = useState(0);
+  // const [reviewText, setReviewText] = useState('');
+  // const [userName, setUserName] = useState('');
+  const [update, setUpdate] = useState({
+    name: "",
+    rating: "",
+    reviewText: "",
+    userName: "",
+
+  });
+
   function openModal() {
     setIsOpen(true);
   }
@@ -37,6 +49,15 @@ const ReviewPage = () => {
       });
   };
 
+  const handleSend = () => {
+    // const { name, rating, reviewText, userName } = this.state;
+    axios
+      .post("/review/create", update)
+      .then((res) => {
+        setUpdate(res.data);
+      });
+  };
+
   const mappedReviews = reviews.map((review) => {
     return (
       <div key={review.review_id}>
@@ -52,7 +73,7 @@ const ReviewPage = () => {
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
-        >{<CreateReview />}
+        >{<CreateReview handleSend={handleSend} />}
           <button onClick={closeModal}>X</button>
         </Modal>
 
@@ -70,7 +91,7 @@ const ReviewPage = () => {
         onChange={(e) => setReviewInput(e.target.value)}
       ></input>
       <button
-        className="search-bar"
+        className={closeModal ? "refresh-button" : "search-bar"}
         type="button"
         onClick={() => {
           reviewSearch();
@@ -80,7 +101,7 @@ const ReviewPage = () => {
         SEARCH
       </button>
       <div>{mappedReviews}</div>
-    </div>
+    </div >
   );
 };
 const mapStateToProps = function (state) {

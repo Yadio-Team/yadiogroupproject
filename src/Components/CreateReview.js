@@ -4,8 +4,8 @@ import ReactStars from "react-rating-stars-component";
 import Header from "./Header";
 
 export default class CreateReview extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       name: "",
       rating: 0,
@@ -42,6 +42,7 @@ export default class CreateReview extends Component {
         });
       });
   };
+
   handleChange = (event) => {
     const input = event.target;
     const checkValue = input.checked === "false" ? false : true;
