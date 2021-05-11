@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import waves from "../assets/Waves.mp4";
 import spotify from "../assets/spotify.jpg";
 import { Link } from 'react-router-dom';
+import ink from "../assets/Ink.mp4";
+import pexels from "../assets/pexels.mp4"
 
 const SearchBar = () => {
   const [name, setName] = useState("");
@@ -98,7 +100,7 @@ if(e.key==='Enter'){
 
       <div className={active ? "hide-video" : "video-container"}>
         <video autoPlay muted loop>
-          <source src={waves} type="video/mp4" />
+          <source src={pexels} type="video/mp4" />
         </video>
       </div>
 
