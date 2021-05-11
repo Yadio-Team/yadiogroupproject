@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import waves from "../assets/Waves.mp4";
-import spotify from "../assets/spotify.jpg";
+import spotify from "../assets/spotify.png";
 import { Link } from 'react-router-dom';
-import ink from "../assets/Ink.mp4";
 import pexels from "../assets/pexels.mp4"
 
 const SearchBar = () => {
