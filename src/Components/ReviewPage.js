@@ -49,6 +49,10 @@ const ReviewPage = () => {
       });
   };
 
+  const handleKeyPress=(e)=>{
+    if(e.key==='Enter'){
+reviewSearch()}
+    }
   function reviewReset() {
     closeModal();
     reviewSearch();
@@ -94,6 +98,7 @@ const ReviewPage = () => {
         value={reviewInput}
         placeholder="SEARCH REVIEWS"
         onChange={(e) => setReviewInput(e.target.value)}
+        onKeyPress={handleKeyPress}
       ></input>
       <button
         className={closeModal ? "refresh-button" : "search-bar"}
