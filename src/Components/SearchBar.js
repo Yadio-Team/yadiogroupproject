@@ -56,6 +56,13 @@ const SearchBar = () => {
     setActive(!currentState);
   };
 
+  const handleKeyPress=(e)=>{
+if(e.key==='Enter'){
+  search()
+  toggleClass()
+}
+  }
+
   const showsMapped = shows.map((show) => {
     return (
       <div className="show-preview">
@@ -74,6 +81,7 @@ const SearchBar = () => {
           className="query"
           type="text"
           placeholder="SEARCH PODCASTS"
+          onKeyPress={handleKeyPress}
           onChange={(e) => setName(e.target.value)}
         ></input>
         <button
