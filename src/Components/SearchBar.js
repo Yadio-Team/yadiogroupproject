@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import waves from "../assets/Waves.mp4";
+import spotify from "../assets/spotify.jpg";
+import { Link } from 'react-router-dom';
 
 const SearchBar = () => {
   const [name, setName] = useState("");
@@ -18,8 +20,8 @@ const SearchBar = () => {
           "Basic " +
           new Buffer(
             "34e6e6f8d0c44a05969f59e1f9923d96" +
-              ":" +
-              "6ea7643063d54381be57faa6160712bd"
+            ":" +
+            "6ea7643063d54381be57faa6160712bd"
           ).toString("base64"),
       },
       data: "grant_type=client_credentials",
@@ -58,6 +60,7 @@ const SearchBar = () => {
     return (
       <div className="show-preview">
         <img className="img-results" src={show.images[1].url} alt="" />
+        <a href={show.external_urls.spotify} target="_blank"><img className="spotify" src={spotify} /></a>
       </div>
     );
   });

@@ -73,7 +73,7 @@ const ReviewPage = () => {
         <p>{review.review_text}</p>
         <p>{review.user_name}</p>
         <p>{review.date_created}</p>
-        <button onClick={openModal}>Create Review</button>
+        
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
@@ -105,6 +105,7 @@ const ReviewPage = () => {
       >
         SEARCH
       </button>
+      <button onClick={openModal}>Create Review</button>
       <div>{mappedReviews}</div>
     </div >
   );
