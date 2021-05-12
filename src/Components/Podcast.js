@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import TouchCarousel from 'react-touch-carousel'
 
 const { Client } = require("podcast-api");
 const client = Client({ apiKey: "9585898bf17b4b92a143199939a720f8" });
@@ -34,7 +35,7 @@ const Podcast = () => {
   console.log(data);
   const mappedPodcasts = data.map((e) => {
     return (
-      <div>
+      <div className='podcast-scroll'>
         <h2>{e.title}</h2>
         {e.podcasts.map((pod) => {
           return <img src={pod.image} alt="coverart" />;
