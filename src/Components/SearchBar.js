@@ -20,8 +20,8 @@ const SearchBar = () => {
           "Basic " +
           new Buffer(
             "34e6e6f8d0c44a05969f59e1f9923d96" +
-              ":" +
-              "6ea7643063d54381be57faa6160712bd"
+            ":" +
+            "6ea7643063d54381be57faa6160712bd"
           ).toString("base64"),
       },
       data: "grant_type=client_credentials",
@@ -53,7 +53,7 @@ const SearchBar = () => {
 
   const toggleClass = () => {
     const currentState = !active;
-    setActive({currentState});
+    setActive({ currentState });
   };
 
   const handleKeyPress = (e) => {

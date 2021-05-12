@@ -5,6 +5,8 @@ import Modal from "react-modal";
 import { connect } from "react-redux";
 import Header from "./Header";
 import CreateReview from "./CreateReview";
+import InfiniteScroll from 'react-infinite-scroller';
+
 
 // ReactModal.setAppElement('#main');
 
@@ -49,14 +51,15 @@ const ReviewPage = () => {
       });
   };
 
-  const handleKeyPress=(e)=>{
-    if(e.key==='Enter'){
-reviewSearch()}
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      reviewSearch()
     }
+  }
   function reviewReset() {
     closeModal();
     reviewSearch();
-   }
+  }
 
   const handleSend = () => {
     // const { name, rating, reviewText, userName } = this.state;
@@ -69,15 +72,15 @@ reviewSearch()}
 
   const mappedReviews = reviews.map((review) => {
     return (
-      <div key={review.review_id}>
-        <p>{review.name}</p>
+      <div className='review-boss' key={review.review_id}>
+        <h3>{review.name}</h3>
         <p>
           <ReactStars value={review.rating} />
         </p>
         <p>{review.review_text}</p>
         <p>{review.user_name}</p>
         <p>{review.date_created}</p>
-        
+
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
@@ -87,31 +90,41 @@ reviewSearch()}
         </Modal>
 
       </div>
+
     );
   });
   return (
     <div className='search-review'>
       <Header />
-     <div className='search-container'></div> <input
-        className="name"
-        type="text"
-        value={reviewInput}
-        placeholder="SEARCH REVIEWS"
-        onChange={(e) => setReviewInput(e.target.value)}
-        onKeyPress={handleKeyPress}
-      ></input>
-      <button
-        className={closeModal ? "refresh-button" : "search-bar"}
-        type="button"
-        onClick={() => {
-          reviewSearch();
-          // toggleClass();
-        }}
-      >
-        SEARCH
+      <div className='search-container'>
+        <input
+          className="name"
+          type="text"
+          value={reviewInput}
+          placeholder="SEARCH REVIEWS"
+          onChange={(e) => setReviewInput(e.target.value)}
+          onKeyPress={handleKeyPress}
+        ></input>
+        <button
+          className={closeModal ? "refresh-button" : "search-bar"}
+          type="button"
+          onClick={() => {
+            reviewSearch();
+            // toggleClass();
+          }}
+        >
+          SEARCH
       </button>
-      <button onClick={openModal}>Create Review</button>
-      <div>{mappedReviews}</div>
+
+        <button onClick={openModal}>Create Review</button>
+      </div>
+      {/* <InfiniteScroll pageStart={0}
+        loadMore={loadFunc}
+        hasMore={true || false}
+        loader={<div className="loader" key={0}>Loading ...</div>}> */}
+
+      <div className='mapped-reviews'>{mappedReviews}</div>
+      {/* </InfiniteScroll> */}
     </div >
   );
 };
