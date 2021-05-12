@@ -9,6 +9,13 @@ const About = () => {
         <div className="about-us">
             <Header />
             <div className="about-img"> <img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Flisawinning%2Ffiles%2F2018%2F03%2Fimage-4.jpg" alt="team" /> </div>
+            {/* <br></br> <br></br><br></br>
+            <br></br> <br></br><br></br>
+            <br></br> <br></br><br></br>
+            <br></br> <br></br><br></br>
+            <br></br> <br></br><br></br>
+            <br></br> <br></br><br></br>
+            <br></br> <br></br><br></br> */}
             <h2 className="header"> About PodeApple </h2>
 
             <p className="about-text">

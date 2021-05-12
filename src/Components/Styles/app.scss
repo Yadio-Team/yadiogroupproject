@@ -4,6 +4,8 @@
  
     background-size: cover;
     display:flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     width: 100%;
 }
@@ -25,6 +27,22 @@ $yellow: rgba(216, 216, 65, 0.493);
 button{
     @include btn-theme()
 }
+
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+  }
+  @mixin for-tablet-portrait-up {
+    @media (min-width: 627px) { @content; }
+  }
+  @mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (min-width: 1300px) { @content; }
+  }
+  @mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
 
 @import './auth';
 @import './register';

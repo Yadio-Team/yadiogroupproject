@@ -1,10 +1,8 @@
 .auth{color: white; 
-        position: fixed;
-        top:30%;
-        left:25%;
-        background-color:rgba(216, 216, 65, 0.493);
+        align-items: center;
+        background-color:rgba(216, 216, 65, 0.884);
         height: 50vh; 
-        width: 50vw;
+        width: 100%;
         border-radius: 1px;
 }
 
@@ -15,10 +13,10 @@
 .auth-userName{
         height:26px;
         border-radius: 5px;
+        width: 30%;
 }
 
 .auth-password{
-        margin-left:5px;
         height:24px;
         border-radius: 25px;
         
@@ -26,19 +24,24 @@
 
 .auth-info{
         display: flex;
+        justify-content: space-around;
         height:30px;
-        align-items: center;
-        justify-content: center;
-        vertical-align: center;
-}
-
-.sign-in-button{
-        margin-left: 10px;
+        
 }
 
 .logo{
-       position: relative;
-        left:200px;
+        align-items: center;
         height:200px;
         width:450px;
+
+        // @include for-tablet-landscape-up{
+        //         height: 100px;
+        //         width: 225px;
+        // }
+}
+
+.remember-me{
+        margin: 0;
+        padding: 0;
+        width: 20px;
 }
