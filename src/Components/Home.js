@@ -1,6 +1,7 @@
 import React from "react";
 import Header from './Header';
 import Podcast from './Podcast'
+import TouchCarousel from 'react-touch-carousel'
 
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
       <div className="Header-Container" >
         <Header />
       </div>
-       
+
       <div className="Cover-Art">
         <Podcast />
       </div>
