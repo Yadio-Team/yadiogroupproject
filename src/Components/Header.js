@@ -6,8 +6,8 @@ import logo from "../assets/logo-icon.png";
 const Header = ({ logoutUser, user }) => {
   return (
     <div className="header-component">
-      <Link to="/home" className="company-logo">
-        <img src={logo} alt="logo" />
+      <Link to="/home" >
+        <img className="company-logo" src={logo} alt="logo" />
       </Link>
       <Link to="/about" className="about-icon">
         About Us

@@ -1,11 +1,19 @@
 .about-us{
-    background-image: url("../../assets/image0.jpg");
+    
     background-repeat: no-repeat;
     background-size: cover;
     color: rgb(255, 255, 255);
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: $grey;
+    
 }
 
-.about-text{
-    background-color: rgba(0, 0, 0, 0.123);
+.about-img{
+    width: 30%;
+    height: 10%;
+    margin-bottom: 500px;
 }
 
