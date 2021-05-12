@@ -8,7 +8,9 @@ const About = () => {
 
         <div className="about-us">
             <Header />
-            <div className="about-img"> <img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Flisawinning%2Ffiles%2F2018%2F03%2Fimage-4.jpg" alt="team" /> </div>
+            {/* <div className="about-img">  */}
+            <img className='about-img' src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Flisawinning%2Ffiles%2F2018%2F03%2Fimage-4.jpg" alt="team" />
+             {/* </div> */}
             {/* <br></br> <br></br><br></br>
             <br></br> <br></br><br></br>
             <br></br> <br></br><br></br>
@@ -16,9 +18,9 @@ const About = () => {
             <br></br> <br></br><br></br>
             <br></br> <br></br><br></br>
             <br></br> <br></br><br></br> */}
-            <h2 className="header"> About PodeApple </h2>
+          <div className='about-text'> <h1 className="about-header"> About PodeApple </h1>
 
-            <p className="about-text">
+            <p className='about-p'>
                 Podeapple was initially created as a group capstone project at DevMountain to practice the skills and fullstack technologies  that our founding members had learned over a rigorous 13-week curriculum. What they didn't expect was that this project would turn into something far greater than a portfolio project that would be living in their respective Github accounts to impress potential employers.
                 <br></br>
                 <br></br>
@@ -33,7 +35,7 @@ const About = () => {
                 <br></br>
                 Thanks for visiting Podeapple (where the "e" is silent)!
             </p>
-
+</div> 
         </div>
     );
 }
