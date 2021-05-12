@@ -1,19 +1,30 @@
 .about-us{
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+    @include universal-theme();
     color: rgb(255, 255, 255);
-    height: 30vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-;
     background-color: $grey;
-    
+    // margin-top: -104.5px;
 }
 
 .about-img{
     width: 30%;
-    height: 10%;
-    margin-bottom: 500px;
+    margin-top:50px;
+  margin-left:35%;
+   margin-bottom: 50px;
 }
 
+.about-text{
+    background-color:$grey;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.about-header{
+    text-align: center;
+}
+.about-p{
+    font-size:29px;
+}

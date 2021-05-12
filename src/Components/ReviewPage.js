@@ -90,9 +90,9 @@ reviewSearch()}
     );
   });
   return (
-    <div>
+    <div className='search-review'>
       <Header />
-      <input
+     <div className='search-container'></div> <input
         className="name"
         type="text"
         value={reviewInput}
