@@ -2,7 +2,7 @@ import React from "react";
 import Auth from "./Components/Auth";
 import Home from "./Components/Home";
 import About from "./Components/About";
-import PodcastSearch from './Components/PodcastSearch'
+import PodcastSearch from "./Components/PodcastSearch";
 import ReviewPage from "./Components/ReviewPage";
 import { HashRouter as Switch, Route } from "react-router-dom";
 
