@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HorizontalScroll from 'react-scroll-horizontal'
+
 
 const { Client } = require("podcast-api");
 const client = Client({ apiKey: "9585898bf17b4b92a143199939a720f8" });

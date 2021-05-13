@@ -38,7 +38,7 @@ button{
     @media (max-width: 599px) { @content; }
   }
   @mixin for-tablet-portrait-up {
-    @media (min-width: 627px) { @content; }
+    @media (max-width: 627px) { @content; }
   }
   @mixin for-tablet-landscape-up {
     @media (min-width: 900px) { @content; }
