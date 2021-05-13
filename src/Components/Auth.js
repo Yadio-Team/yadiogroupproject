@@ -92,14 +92,14 @@ const Auth = ({ getUser }) => {
           onChange={handleChange}
         />
         <Input
-          className="auth-password"
+          // className="auth-password"
           placeholder="Password"
           name="password"
           value={password}
           onChange={handleChange}
           type={values.showPassword ? "text" : "password"}
           endAdornment={
-            <InputAdornment position="end">
+            <InputAdornment position="start">
               <IconButton
                 onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}
@@ -119,11 +119,13 @@ const Auth = ({ getUser }) => {
           type="checkbox"
         />{" "}
         Remember me
-        <button className="sign-in-button" type="submit" onClick={loginUser}>
+        <button 
+        // className="sign-in-button"
+         type="submit" onClick={loginUser}>
           Sign in
         </button>
         <button
-          className="register-button"
+          // className="register-button"
           type="submit"
           onClick={registerUser}
         >
