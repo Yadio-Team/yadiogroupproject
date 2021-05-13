@@ -28,10 +28,10 @@ video {
   background-color: $grey;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   align-content: center;
   align-items: center;
-
+  overflow: scroll;
 }
 
 .hide-video {
@@ -64,7 +64,7 @@ video {
 }
 .search-top {
   position: absolute;
-  top: 60px;
+  top: 90px;
 }
 
 .map-shows {
@@ -114,4 +114,6 @@ video {
 //   margin-top: 500px;
 //   margin-left: 720px;
 //   margin-right: 100px;
-// }
+// } 
+
+
