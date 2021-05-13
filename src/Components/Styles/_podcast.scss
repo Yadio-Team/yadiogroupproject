@@ -20,6 +20,11 @@
 
 .cover{
     margin-right: 15px;
+    @media (max-width: 600px) {
+      height: 100px;
+      width: 100px;
+      font-size: 20px;
+    }
 }
 
   

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ReactStars from "react-rating-stars-component";
 import Modal from "react-modal";
@@ -26,9 +26,14 @@ const ReviewPage = () => {
 
   });
 
-  function openModal() {
+  useEffect(() => {
+    console.log(modalIsOpen)
+  }, [modalIsOpen])
+
+  const openModal = () => {
     setIsOpen(true);
   }
+
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
 
@@ -81,13 +86,13 @@ const ReviewPage = () => {
         <p>{review.user_name}</p>
         <p>{review.date_created}</p>
 
-        <Modal
+        {/* <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
         >{<CreateReview handleSend={handleSend} />}
           <button onClick={reviewReset}>X</button>
-        </Modal>
+        </Modal> */}
 
       </div>
 
@@ -118,6 +123,14 @@ const ReviewPage = () => {
         loadMore={loadFunc}
         hasMore={true || false}
         loader={<div className="loader" key={0}>Loading ...</div>}> */}
+
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+      >{<CreateReview handleSend={handleSend} />}
+        <button onClick={reviewReset}>X</button>
+      </Modal>
 
       <div className='mapped-reviews'>{mappedReviews}</div>
       {/* </InfiniteScroll> */}
