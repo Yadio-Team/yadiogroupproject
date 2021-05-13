@@ -9,7 +9,11 @@
         width: 100%;
         border-radius: 1px;
         margin-top:15%;
-       
+        @media(max-width: 701px){
+                height: 100%;
+                margin-top: 0;
+                justify-content: flex-start;
+        }
 }
 
 .auth-title{
@@ -39,19 +43,26 @@
         color:black;
         font-weight: bolder;
         align-items: center;
-        
+        @media(max-width: 701px){
+                flex-direction: column;
+                margin-top: 50px;
+        }
 }
 
 .logo{  display:flex;
         
         height:200px;
         width:450px;
-
+        @media(max-width: 400px){
+                height: 100px;
+                width: 225px;
+        }
+}
         // @include for-tablet-landscape-up{
         //         height: 100px;
         //         width: 225px;
         // }
-}
+
 
 .remember-me{
      
