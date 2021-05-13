@@ -67,7 +67,7 @@ const SearchBar = () => {
     return (
       <div className="show-preview">
         <img className="img-results" src={show.images[1].url} alt="" />
-        <a href={show.external_urls.spotify} target="_blank">
+        <a className='spotify-link' href={show.external_urls.spotify} target="_blank">
           <img className="spotify" src={spotify} />
         </a>
       </div>
