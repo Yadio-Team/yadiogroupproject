@@ -16,7 +16,9 @@ video {
   margin-bottom:90px;
   width: 90%;
   height: 80vh;
- 
+ @include for-tablet-portrait-up{
+   display:none
+ }
  
 }
 
@@ -55,6 +57,10 @@ video {
   align-content: center;
   align-items:Center;
  z-index:5;
+ @include for-tablet-portrait-up{
+  width:300px;
+  height:100px;
+}
 }
 .search-top {
   position: absolute;
@@ -96,6 +102,10 @@ video {
 .query {
   width: 400px;
   border-radius: 5px;
+  @include for-tablet-portrait-up{
+    width:200px;
+   
+  }
 }
 
 // .search-bar{

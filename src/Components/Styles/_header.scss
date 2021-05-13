@@ -34,8 +34,19 @@
  
 }
 
-.about-icon {
-  @include icon-theme();
+.text-icon{
+  @media (max-width:800px){
+    display: none;
+  }
+}
+
+.icon{
+  @media (min-width:800px){
+    display: none;
+  }
+}
+.about-icon{
+@include icon-theme();
 }
 
 .podcast-icon {
