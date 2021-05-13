@@ -5,7 +5,7 @@ import Modal from "react-modal";
 import { connect } from "react-redux";
 import Header from "./Header";
 import CreateReview from "./CreateReview";
-import InfiniteScroll from 'react-infinite-scroller';
+
 
 
 // ReactModal.setAppElement('#main');
@@ -62,7 +62,7 @@ const ReviewPage = () => {
   }
 
   const handleSend = () => {
-    // const { name, rating, reviewText, userName } = this.state;
+    const { name, rating, reviewText, userName } = this.state;
     axios
       .post("/review/create", update)
       .then((res) => {
@@ -106,12 +106,8 @@ const ReviewPage = () => {
           onKeyPress={handleKeyPress}
         ></input>
         <button
-          className={closeModal ? "refresh-button" : "search-bar"}
           type="button"
-          onClick={() => {
-            reviewSearch();
-            // toggleClass();
-          }}
+          onClick={reviewSearch}
         >
           SEARCH
       </button>

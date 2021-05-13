@@ -19,7 +19,7 @@ const About = () => {
             <br></br> <br></br><br></br>
             <br></br> <br></br><br></br> */}
           <div className='about-text'> <h1 className="about-header"> About PodeApple </h1>
-
+<div className="p-container">
             <p className='about-p'>
                 Podeapple was initially created as a group capstone project at DevMountain to practice the skills and fullstack technologies  that our founding members had learned over a rigorous 13-week curriculum. What they didn't expect was that this project would turn into something far greater than a portfolio project that would be living in their respective Github accounts to impress potential employers.
                 <br></br>
@@ -34,7 +34,7 @@ const About = () => {
                 <br></br>
                 <br></br>
                 Thanks for visiting Podeapple (where the "e" is silent)!
-            </p>
+            </p></div>
 </div> 
         </div>
     );
