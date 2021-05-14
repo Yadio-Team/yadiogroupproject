@@ -31,7 +31,7 @@ const Auth = ({ getUser }) => {
       const user = await axios.post("/auth/login", { userName, password });
       getUser(user.data);
       handleFormSubmit();
-      history.push("/reviews");
+      history.push("/home");
     } catch (err) {
       console.log(err);
     }
@@ -43,7 +43,7 @@ const Auth = ({ getUser }) => {
       const user = await axios.post("/auth/register", { userName, password });
       getUser(user.data);
       handleFormSubmit();
-      history.push("/reviews");
+      history.push("/home");
     } catch (err) {
       console.log(err);
     }
